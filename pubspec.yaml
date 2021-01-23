@@ -36,8 +36,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-  assets:
-    - license_list_20200625_model.csv
+#  assets:
+#    - license_list_20200625_model.csv
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
