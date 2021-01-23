@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:my_licenses/view/main_view.dart';
+import 'package:my_licenses/view_model/license_vm.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider.value(
+      value: LicenseViewModel(),
+      child: MyApp()
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,7 +15,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
