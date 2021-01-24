@@ -17,28 +17,26 @@ class _MainViewState extends State<MainView> {
   @override
   Widget build(BuildContext context) {
     final licenseViewModel = Provider.of<LicenseViewModel>(context);
-    // if (licenseViewModel.loading) {
-    //   licenseViewModel.updateLicenseData();
-    //   return LoadingView();
-    // }
+
     _pages = [
       ProfileView(),
       SkillView(licenseViewModel.getData()),
     ];
+
+    if (licenseViewModel.loading) {
+        licenseViewModel.updateLicenseData();
+    }
     return Scaffold(
       body: _pages[_selectIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle), label: '프로필'),
-          BottomNavigationBarItem(icon: Icon(Icons.assessment), label: '자격증')
+          BottomNavigationBarItem(icon: Icon(Icons.assessment), label: '자격증',)
         ],
         currentIndex: _selectIndex,
         onTap: _seleteItem,
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        licenseViewModel.updateLicenseData();
-      }, child: Icon(Icons.refresh),),
     );
   }
 
@@ -46,5 +44,6 @@ class _MainViewState extends State<MainView> {
     setState(() {
       _selectIndex = index;
     });
+
   }
 }
