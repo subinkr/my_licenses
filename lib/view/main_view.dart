@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_licenses/view/loading_view.dart';
 import 'package:my_licenses/view/profile_view.dart';
 import 'package:my_licenses/view/skill_view.dart';
 import 'package:my_licenses/view_model/license_vm.dart';
